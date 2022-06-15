@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/RxJava2-Android-Samples" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/RxJavaRetrofitNotesApp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/codecanyon-dUf2MxIF-android-news-app/AndroidNewsApp/android_studio/AndroidNewsApp" vcs="Git" />
