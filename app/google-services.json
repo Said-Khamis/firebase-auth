@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1013000217589",
+    "project_id": "githubtest-37fde",
+    "storage_bucket": "githubtest-37fde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013000217589:android:4eb73cff782982c62176bc",
+        "android_client_info": {
+          "package_name": "com.duce.firebaseauthentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013000217589-chjrjiaucth5t0u32ri01pnbf8929r4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTNoNKvIDlKYO5D6TkakalnMwlsiA6Z5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013000217589-chjrjiaucth5t0u32ri01pnbf8929r4j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

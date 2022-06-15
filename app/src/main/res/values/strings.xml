@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FirebaseAuthentication</string>
+    <string name="text_email_pass">Email Password Auth</string>
+    <string name="text_phone_number">Phone Number Auth</string>
+    <string name="text_anonymous">Anonymous</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="firebase_auth">Firebase Auth</string>
+    <string name="email">Email</string>
+    <string name="signIn">Sign In</string>
+    <string name="password">Passsword</string>
+    <string name="no_registered">If you dont have accoun</string>
+    <string name="register">New Account</string>
+    <string name="text_firebase_ui">Firebase Auth UI</string>
+</resources>
