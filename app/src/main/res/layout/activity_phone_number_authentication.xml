@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhoneNumberAuthentication">
+
+   <LinearLayout
+       android:layout_marginStart="20dp"
+       android:layout_marginEnd="20dp"
+       android:layout_centerInParent="true"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:id="@+id/phoneTextInputlay"
+           app:boxCornerRadiusBottomEnd="12dp"
+           app:boxCornerRadiusBottomStart="12dp"
+           app:boxCornerRadiusTopEnd="12dp"
+           app:boxCornerRadiusTopStart="12dp"
+           app:boxBackgroundMode="outline"
+           app:errorEnabled="true"
+           app:boxStrokeColor="@color/black"
+           app:errorTextColor="@android:color/holo_red_light"
+           android:hint="@string/phone"
+           android:layout_marginBottom="5dp"
+           app:hintTextColor="@color/black"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/phonel_edt"
+               android:textColor="@color/black"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="10dp" />
+
+       </com.google.android.material.textfield.TextInputLayout>
+
+       <Button
+           android:text="@string/sendNo"
+           android:id="@+id/sendNumber"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+
+   </LinearLayout>
+
+</RelativeLayout>

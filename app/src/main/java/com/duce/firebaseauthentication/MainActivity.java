@@ -6,11 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.gms.auth.api.identity.BeginSignInRequest;
+import com.google.android.gms.auth.api.identity.Identity;
+import com.google.android.gms.auth.api.identity.SignInClient;
 import com.google.android.material.card.MaterialCardView;
 
 public class MainActivity extends AppCompatActivity {
 
     private MaterialCardView materialCardViewemailPassword;
+    private SignInClient oneTapClient;
+    private BeginSignInRequest signInRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                  startActivity(new Intent(MainActivity.this,EmailPasswordAuth.class));
             }
         });
+        
 
     }
 }

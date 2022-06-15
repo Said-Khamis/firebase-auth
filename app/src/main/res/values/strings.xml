@@ -15,4 +15,6 @@
     <string name="logout">Log out</string>
     <string name="loggedInAs">Logged In As</string>
     <string name="name">Display Name:</string>
+    <string name="phone">Phone</string>
+    <string name="sendNo">Send Token</string>
 </resources>
