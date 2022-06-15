@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class EmailPasswordAuth extends AppCompatActivity {
 
-    private TextView loginText;
+    private TextView loginText,newAcount;
     private TextInputEditText textInputEditTextEmail, textInputEditTextPassword;
     private FirebaseAuth mAuth;
 
@@ -30,6 +30,7 @@ public class EmailPasswordAuth extends AppCompatActivity {
         setContentView(R.layout.activity_email_password_auth);
 
         loginText = findViewById(R.id.loginText);
+        newAcount = findViewById(R.id.newAcount);
         textInputEditTextEmail = findViewById(R.id.email_edt);
         textInputEditTextPassword = findViewById(R.id.password_edt);
 
@@ -42,34 +43,47 @@ public class EmailPasswordAuth extends AppCompatActivity {
             }
         });
 
+        newAcount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(EmailPasswordAuth.this,RegisterEmail.class));
+            }
+        });
+
     }
 
     private void login() {
         String email = textInputEditTextEmail.getText().toString();
         String password = textInputEditTextPassword.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(email,password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                       if (task.isSuccessful()){
-                           Tools.getTools(getApplicationContext()).showToast("Success");
+        if(textInputEditTextEmail.getText().length() == 0){
+             textInputEditTextEmail.setError("Email Required");
+        } else if (textInputEditTextPassword.getText().length() == 0){
+            textInputEditTextPassword.setError("Password Required");
+        }else {
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Tools.getTools(getApplicationContext()).showToast("Success");
 
-                           new Handler().postDelayed(new Runnable() {
-                               @Override
-                               public void run() {
-                                   startActivity(new Intent(EmailPasswordAuth.this,Home.class));
-                                   finish();
-                               }
-                           },100);
-                       }
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Tools.getTools(getApplicationContext()).showToast(e.getMessage().toString());
-            }
-        });
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        startActivity(new Intent(EmailPasswordAuth.this, Home.class));
+                                        finish();
+                                    }
+                                }, 100);
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Tools.getTools(getApplicationContext()).showToast(e.getMessage().toString());
+                }
+            });
+        }
 
     }
 

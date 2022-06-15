@@ -46,33 +46,45 @@ public class RegisterEmail extends AppCompatActivity {
     }
 
     private void signUp() {
-      String email = textInputEditTextEmail.getText().toString();
-      String password = textInputEditTextPassword.getText().toString();
 
-      mAuth.createUserWithEmailAndPassword(email,password)
-              .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                  @Override
-                  public void onComplete(@NonNull Task<AuthResult> task) {
-                       if (task.isSuccessful()){
+        String email = textInputEditTextEmail.getText().toString();
+        String password = textInputEditTextPassword.getText().toString();
 
-                           Tools.getTools(getApplicationContext()).showToast("Successfully ");
+        if(textInputEditTextEmail.getText().length() == 0){
 
-                           new Handler().postDelayed(new Runnable() {
-                               @Override
-                               public void run() {
-                                   startActivity(new Intent(RegisterEmail.this,EmailPasswordAuth.class));
-                                   finish();
-                               }
-                           },100);
+            textInputEditTextEmail.setError("Email Required");
 
-                       }
-                  }
-              }).addOnFailureListener(new OnFailureListener() {
-          @Override
-          public void onFailure(@NonNull Exception e) {
-                  Tools.getTools(getApplicationContext()).showToast(e.getMessage().toString());
-          }
-      });
+        } else if (textInputEditTextPassword.getText().length() == 0){
+
+            textInputEditTextPassword.setError("Password Required");
+
+        }else {
+
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Tools.getTools(getApplicationContext()).showToast("Success");
+
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        startActivity(new Intent(RegisterEmail.this, EmailPasswordAuth.class));
+                                        finish();
+                                    }
+                                }, 100);
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+
+                    Tools.getTools(getApplicationContext()).showToast(e.getMessage().toString());
+
+                }
+            });
+        }
 
     }
 
