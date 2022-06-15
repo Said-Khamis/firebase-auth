@@ -1,10 +1,12 @@
-Firebase Authentication
-In this repository . I am going to add both of firebase authentication methods including
+<h1>Firebase Authentication</h1>
 
-Email/Passowrd Authentication
-Phone Authentication
-Anonymous Authentication
-Google
-Facebook
-GitHub
-Twitter etc
+In this repository . I am going to add both of firebase authentication methods including  </br>
+
+
+- Email/Passowrd Authentication
+- Phone Authentication
+- Anonymous Authentication
+- Google
+- Facebook
+- GitHub
+- Twitter etc
